@@ -11,7 +11,9 @@ public class ColorPen
     public Vector2 position;
     public float rotation;
     public Vector2 size;
+    public Direction direction;
     public int key;
+    
 
 }
 [System.Serializable]
@@ -19,6 +21,7 @@ public class ConfigGame
 {
     // level stats
     public int index;
+    public bool block;
     public Sprite shape;
     public Sprite lineShape;
     public string[] keyAnswers;
