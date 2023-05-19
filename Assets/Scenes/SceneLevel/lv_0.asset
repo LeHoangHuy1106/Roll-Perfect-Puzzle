@@ -22,23 +22,23 @@ MonoBehaviour:
   colorPens:
   - isActive: 1
     color: 0
-    position: {x: -295, y: -2}
+    position: {x: 286, y: -2}
     rotation: 0
     size: {x: 600, y: 1300}
     direction: 2
     key: 0
-  - isActive: 1
+  - isActive: 0
     color: 1
-    position: {x: 305, y: 6}
+    position: {x: -295, y: -2}
     rotation: 0
-    size: {x: 0, y: 0}
+    size: {x: 600, y: 1300}
     direction: 2
     key: 1
-  - isActive: 0
+  - isActive: 1
     color: 2
-    position: {x: 305, y: 6}
+    position: {x: -295, y: -2}
     rotation: 0
-    size: {x: 0, y: 0}
+    size: {x: 600, y: 1300}
     direction: 0
     key: 2
   - isActive: 0
