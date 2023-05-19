@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Model : MonoBehaviour
 {
-    [SerializeField] public string[] correctAnswer;
 
+    [SerializeField] public int numberOfScene;
     [SerializeField] public List<ConfigGame> configGames;
 
 }

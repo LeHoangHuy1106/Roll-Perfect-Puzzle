@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Direction { positiveXAxis, negativeXAxis, positiveYAxis, negativeYAxis }
 public class Pen : MonoBehaviour
 {
 
@@ -12,13 +11,14 @@ public class Pen : MonoBehaviour
     [SerializeField] private Transform tf;
     [SerializeField] private Color color;
     [SerializeField] private float speed = 2f;
-    [SerializeField] private Direction direction;
     [SerializeField] private int index;
     [SerializeField] private GameObject pen;
+    [SerializeField] private enumColor enumColor;
 
     public Vector2 PosTarget { get; set; }
     private float newX;
     private float newY;
+    private Direction direction;
 
     public void SetPositionStart()
     {
@@ -47,17 +47,29 @@ public class Pen : MonoBehaviour
         }
         rectTransform.localPosition = new Vector2(newX, newY);
     }
+
     private void Awake()
     {
 
         ink.color = color;
-        SetPostionPen();
     }
     public int GetIndex()
     {
         return this.index;
     }
 
+    public void SetSize(Vector2 size)
+    {
+        rectTransform.sizeDelta = new Vector2(size.x, size.y);
+        /*
+        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size.x);
+        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size.y);
+        */
+    }    
+    public void SetDirection( Direction direction)
+    {
+        this.direction = direction;
+    }    
 
     public void SetParentTranform(Transform parent)
     {
@@ -70,14 +82,16 @@ public class Pen : MonoBehaviour
 
             case Direction.positiveYAxis:
                 newX = 0f;
-                newY = rectTransform.rect.height / 2;
+                newY = Mathf.Abs( rectTransform.rect.height / 2);
+                pen.transform.localScale = new(1f, -1f);
                 break;
             case Direction.negativeYAxis:
                 newX = 0f;
                 newY = -rectTransform.rect.height / 2;
                 break;
             case Direction.positiveXAxis:
-                newX = rectTransform.rect.width / 2;
+                pen.transform.localScale = new(-1f, 1f);
+                newX = Mathf.Abs(rectTransform.rect.width / 2);
                 newY = 0;
                 break;
             case Direction.negativeXAxis:
