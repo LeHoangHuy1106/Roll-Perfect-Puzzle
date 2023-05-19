@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Model : MonoBehaviour
+namespace Game
 {
+    public class Model : MonoBehaviour
+    {
+        [SerializeField] public int numberOfScene;
+        [SerializeField] private List<ConfigGame> levels;
+        public ConfigGame Level(int level) => Instantiate(levels[level]);
 
-    [SerializeField] public int numberOfScene;
-    [SerializeField] public List<ConfigGame> configGames;
-
+    }
 }
