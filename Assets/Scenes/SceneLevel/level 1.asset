@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d937b7005b8ba4e80ad471b9c49065, type: 3}
+  m_Name: level 1
+  m_EditorClassIdentifier: 
+  index: 0
+  shape: {fileID: 21300000, guid: c17c2b79acd93f440bf3a6b2de92e799, type: 3}
+  lineShape: {fileID: 21300000, guid: 1fe8440af6e16d6419490f9b8740bff2, type: 3}
+  keyAnswers:
+  - 24
+  - 42
+  numberColor: 2
+  colorPens:
+  - isActive: 0
+    color: 0
+    position: {x: 286, y: -2}
+    rotation: 0
+    size: {x: 600, y: 600}
+    direction: 2
+    key: 0
+  - isActive: 0
+    color: 1
+    position: {x: -295, y: -2}
+    rotation: 0
+    size: {x: 600, y: 600}
+    direction: 2
+    key: 1
+  - isActive: 1
+    color: 2
+    position: {x: -155.8, y: 119.8}
+    rotation: 131.727
+    size: {x: 460, y: 800}
+    direction: 3
+    key: 2
+  - isActive: 0
+    color: 4
+    position: {x: 0, y: 0}
+    rotation: 0
+    size: {x: 0, y: 0}
+    direction: 0
+    key: 3
+  - isActive: 1
+    color: 3
+    position: {x: 167, y: -168}
+    rotation: -48.543
+    size: {x: 423.428, y: 800}
+    direction: 3
+    key: 4
