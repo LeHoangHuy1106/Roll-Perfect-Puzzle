@@ -4,45 +4,51 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class Menu : MonoBehaviour
+namespace Menu
 {
-    [SerializeField] int numberOfLevel;
-    [SerializeField] GameObject button;
-    [SerializeField] Transform parentButton;
-
-    private Action<int> action;
-
-    private int levelCurr = 0;
-
-    public void SetAction(Action<int> action)
+    public class Menu : MonoBehaviour
     {
-        this.action = action;
-    }
-    private void Update()
-    {
-        Debug.Log("levelcurr:" + levelCurr);
-    }
-    private void Awake()
-    {
+        [SerializeField] int numberOfLevel;
+        [SerializeField] GameObject buttonOpen;
+        [SerializeField] GameObject buttonClose;
+        [SerializeField] Transform parentButton;
 
-        levelCurr = PlayerPrefs.GetInt("level");
+        private Action<int> action;
 
-        for (int i = 0; i <= numberOfLevel; i++)
+        private int levelCurr = 0;
+
+        public void SetAction(Action<int> action)
         {
-            GameObject t = Instantiate(button);
-            t.GetComponent<LevelItem>().SetNumberLevel(i, action);
-            t.transform.SetParent(parentButton);
-            t.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = i.ToString();
+            this.action = action;
+        }
+        private void Awake()
+        {
 
-            if (i > levelCurr)
+            levelCurr = PlayerPrefs.GetInt("level");
+
+            for (int i = 0; i <= numberOfLevel; i++)
             {
-                t.GetComponent<Button>().interactable = false;
+
+
+                if (i > levelCurr)
+                {
+
+                    GameObject t = Instantiate(buttonClose);
+                    t.GetComponent<LevelItem>().SetNumberLevel(i, action);
+                    t.transform.SetParent(parentButton);
+                    t.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = i.ToString();
+                    t.GetComponent<Button>().interactable = false;
+                }
+                else
+                {
+                    GameObject t = Instantiate(buttonOpen);
+                    t.GetComponent<LevelItem>().SetNumberLevel(i, action);
+                    t.transform.SetParent(parentButton);
+                    t.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = i.ToString();
+
+                }
             }
         }
-
-
-
-
-
     }
+
 }

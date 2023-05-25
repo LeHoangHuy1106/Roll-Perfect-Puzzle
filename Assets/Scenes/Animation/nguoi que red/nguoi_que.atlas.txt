@@ -1,0 +1,55 @@
+
+nguoi_que.png
+size: 368,186
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chan_phai_do
+  rotate: true
+  xy: 224, 144
+  size: 40, 111
+  orig: 40, 111
+  offset: 0, 0
+  index: -1
+chan_trai_do
+  rotate: true
+  xy: 224, 102
+  size: 40, 110
+  orig: 40, 110
+  offset: 0, 0
+  index: -1
+dau_do
+  rotate: false
+  xy: 304, 36
+  size: 62, 57
+  orig: 62, 57
+  offset: 0, 0
+  index: -1
+gameplay/images/cay_son_do
+  rotate: true
+  xy: 2, 4
+  size: 180, 220
+  orig: 180, 220
+  offset: 0, 0
+  index: -1
+tay_phai_do
+  rotate: true
+  xy: 224, 51
+  size: 49, 78
+  orig: 49, 78
+  offset: 0, 0
+  index: -1
+tay_trai_do
+  rotate: true
+  xy: 224, 2
+  size: 47, 77
+  orig: 47, 77
+  offset: 0, 0
+  index: -1
+than_do
+  rotate: false
+  xy: 337, 95
+  size: 28, 89
+  orig: 28, 89
+  offset: 0, 0
+  index: -1

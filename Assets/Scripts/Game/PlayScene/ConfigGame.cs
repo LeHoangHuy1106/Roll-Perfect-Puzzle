@@ -23,6 +23,7 @@ namespace Game
         public int index;
         public Sprite shape;
         public Sprite lineShape;
+        public Sprite answerShape;
         public string[] keyAnswers;
         public int numberColor;
         public List<ColorPen> colorPens;

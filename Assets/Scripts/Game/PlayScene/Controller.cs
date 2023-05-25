@@ -13,8 +13,6 @@ namespace Game
     {
         [SerializeField] private GameObject objectQuestion;
 
-
-
         [SerializeField] private Transform prepareTranform;
         [SerializeField] private Transform answersTranform;
         [SerializeField] private Transform PensGroupTranform;
@@ -37,7 +35,9 @@ namespace Game
 
         private void ReadData(int level)
         {
+            //  change sprite gamee Object Shap
             view.ChangeShape(configGame.shape);
+            //  change sprite gamee Object Shap line
             view.ChangeLineShape(configGame.lineShape);
             
             count = configGame.numberColor;
@@ -45,6 +45,7 @@ namespace Game
             {
                 if (configGame.colorPens[i].isActive)
                 {
+                    // direction parameter
                     inkColors[i].SetDirection(configGame.colorPens[i].direction);
                     // postion parameter
                     inkColors[i].transform.localPosition = configGame.colorPens[i].position;
@@ -60,9 +61,6 @@ namespace Game
                     pens[i] = null;
                 }
             }
-
-
-
         }
 
         private void Awake()
@@ -84,6 +82,7 @@ namespace Game
                 inkColors[(int)(correctAnswer[0][i] - '0')].SetParentTranform(ShapeUnavailableTranform);
                 inkColors[(int)(correctAnswer[0][i] - '0')].SetParentTranform(answersTranform);
             }
+            view.SetSpritePanelShape(configGame.answerShape);
             view.SetTextLevel("Level " + level);
             ReadData(level);
 
@@ -123,7 +122,7 @@ namespace Game
 
         public void ChooseIndex(int i)
         {
-            inkColors[i].Choose(answersTranform);
+            inkColors[i].Choose(answersTranform, PensGroupTranform);
             keyAnswer = keyAnswer + inkColors[i].GetIndex();
             count--;
             if (count <= 0)
